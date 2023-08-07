@@ -1,0 +1,74 @@
+import subprocess
+import sys
+import os
+import time
+
+import pip
+
+try:
+    os.system("cls")
+except:
+    os.system("clear")
+
+# Đường dẫn đến trình thông dịch Python
+python_path = os.path.join(sys.exec_prefix, "python.exe")
+
+# Đường dẫn đến chương trình Python chạy
+script_path = os.path.join(os.path.dirname(__file__), "tool2.py")
+
+# Số lần chạy chương trình
+num_runs = 10
+
+# Tạo và chạy các tiến trình con
+import subprocess
+import time
+
+processes = []
+for i in range(num_runs):
+    try:
+        process = subprocess.Popen([python_path, script_path])
+        processes.append(process)
+        time.sleep(1)  # Chờ 1 giây trước khi chạy tiến trình con tiếp theo
+    except Exception as e:
+        print(f"Error occurred when running process {i + 1}: {e}")
+
+
+import subprocess
+import time
+import requests
+import random
+import re
+import string
+import base64
+import datetime
+from colorama import Fore, Style
+from os import system
+import sys
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+
+# Cài đặt module colorama nếu chưa có
+try:
+    import colorama
+except ImportError:
+    subprocess.run([sys.executable, "-m", "pip", "install", "colorama"])
+    import colorama
+
+# Chờ cho tất cả các tiến trình con hoàn thành
+for process in processes:
+    process.wait()
+
+# Khởi tạo trình duyệt Chrome
+chrome_service = ChromeService(executable_path='/path/to/chromedriver')
+chrome_options = ChromeOptions()
+driver = webdriver.Chrome(service=chrome_service, options=chrome_options)
+
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import logging
+from selenium.webdriver.remote.remote_connection import LOGGER as selenium_logger
